@@ -2,32 +2,27 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="border-t border-border/70 bg-surface/45">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Brand */}
           <div>
-            <div className="flex items-center gap-0.5 text-lg font-bold">
-              <span className="text-foreground">SmartData</span>
-              <span className="text-accent-light">Legal</span>
+            <div className="text-lg font-semibold tracking-tight">
+              SmartData <span className="text-accent-light">Legal</span>
             </div>
-            <p className="mt-2 text-sm text-muted">
-              AI-powered legal intake for Puerto Rico law firms.
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
+              Plataforma de intake legal con IA para equipos de paralegales y abogados que buscan mas conversion y mejor control.
             </p>
           </div>
 
-          {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted">
-              Company
-            </h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Empresa</h4>
             <ul className="mt-3 space-y-2">
               <li>
                 <a
                   href="mailto:elfren@smartdatapr.com"
-                  className="text-sm text-foreground/70 transition-colors hover:text-foreground"
+                  className="text-sm text-foreground/80 transition-colors hover:text-foreground"
                 >
-                  Contact
+                  Contacto
                 </a>
               </li>
               <li>
@@ -35,7 +30,7 @@ export function Footer() {
                   href="https://smartdatapr.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-foreground/70 transition-colors hover:text-foreground"
+                  className="text-sm text-foreground/80 transition-colors hover:text-foreground"
                 >
                   SmartData PR
                 </a>
@@ -43,42 +38,30 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted">
-              Legal
-            </h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Legal</h4>
             <ul className="mt-3 space-y-2">
               <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  Privacy Policy
+                <Link href="/privacy" className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+                  Politica de privacidad
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/terms"
-                  className="text-sm text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  Terms of Service
+                <Link href="/terms" className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+                  Terminos del servicio
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/disclaimer"
-                  className="text-sm text-foreground/70 transition-colors hover:text-foreground"
-                >
-                  Disclaimer
+                <Link href="/disclaimer" className="text-sm text-foreground/80 transition-colors hover:text-foreground">
+                  Aviso legal
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted">
-          &copy; {new Date().getFullYear()} SmartData Legal &mdash; Puerto Rico. All rights reserved.
+        <div className="mt-10 border-t border-border/70 pt-6 text-center text-xs uppercase tracking-[0.14em] text-muted">
+          © {new Date().getFullYear()} SmartData Legal · Puerto Rico
         </div>
       </div>
     </footer>

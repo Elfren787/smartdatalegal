@@ -1,5 +1,5 @@
 const FALLBACK_MAILTO =
-  "mailto:elfren@smartdatapr.com?subject=SmartData%20Legal%20Demo%20Request";
+  "mailto:elfren@smartdatapr.com?subject=Solicitud%20de%20demo%20SmartData%20Legal";
 
 export function getDemoLink(): string {
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;

@@ -3,8 +3,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "SmartData Legal privacy policy. How we collect, use, and protect your data.",
+  title: "Politica de privacidad",
+  description: "Politica de privacidad de SmartData Legal.",
 };
 
 export default function PrivacyPage() {
@@ -12,110 +12,68 @@ export default function PrivacyPage() {
     <>
       <Navbar />
       <main className="min-h-screen pt-32 pb-24">
-        <article className="prose-invert mx-auto max-w-3xl px-6">
-          <h1 className="text-4xl font-bold tracking-tight">Privacy Policy</h1>
-          <p className="mt-2 text-sm text-muted">Last updated: February 2026</p>
+        <article className="mx-auto max-w-3xl px-6">
+          <h1 className="text-4xl font-semibold tracking-tight">Politica de privacidad</h1>
+          <p className="mt-2 text-sm text-muted">Ultima actualizacion: febrero 2026</p>
 
-          <div className="mt-10 space-y-8 text-foreground/80 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-foreground [&_p]:mt-3 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6">
+          <div className="mt-10 space-y-8 text-foreground/85 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_p]:mt-3 [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6">
             <section>
-              <h2>Introduction</h2>
+              <h2>1. Introduccion</h2>
               <p>
-                SmartData Legal (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a product of SmartData PR,
-                operates the website smartdatalegal.com. This Privacy Policy explains how we
-                collect, use, disclose, and safeguard your information when you visit our
-                website or use our services.
+                SmartData Legal, producto de SmartData PR, respeta tu privacidad. Esta politica explica que datos recopilamos,
+                como los usamos y como los protegemos cuando visitas este sitio o solicitas una demostracion.
               </p>
             </section>
 
             <section>
-              <h2>Information We Collect</h2>
-              <p>We may collect the following types of information:</p>
+              <h2>2. Datos que recopilamos</h2>
               <ul>
-                <li>
-                  <strong>Contact information</strong> you provide through our demo request
-                  form, including your name, firm name, email address, phone number, and
-                  language preference.
-                </li>
-                <li>
-                  <strong>Usage data</strong> automatically collected when you visit our
-                  website, such as your IP address, browser type, pages visited, and time
-                  spent on pages.
-                </li>
-                <li>
-                  <strong>Analytics data</strong> collected through standard web analytics
-                  tools to understand website traffic and usage patterns.
-                </li>
+                <li>Datos de contacto: nombre, bufete, correo, telefono e idioma preferido.</li>
+                <li>Datos tecnicos: navegador, dispositivo, direccion IP y paginas visitadas.</li>
+                <li>Datos de uso: interacciones generales para mejorar contenido y conversion.</li>
               </ul>
             </section>
 
             <section>
-              <h2>How We Use Your Information</h2>
-              <p>We use the information we collect to:</p>
+              <h2>3. Uso de la informacion</h2>
               <ul>
-                <li>Respond to your demo requests and inquiries</li>
-                <li>Communicate with you about our products and services</li>
-                <li>Improve our website and user experience</li>
-                <li>Analyze website usage to enhance our marketing efforts</li>
-                <li>Comply with applicable laws and regulations</li>
+                <li>Responder solicitudes de demo y consultas comerciales.</li>
+                <li>Mejorar la experiencia del sitio y su rendimiento.</li>
+                <li>Enviar comunicaciones relacionadas al producto y su implementacion.</li>
+                <li>Cumplir con obligaciones legales aplicables.</li>
               </ul>
             </section>
 
             <section>
-              <h2>Data Storage and Security</h2>
+              <h2>4. Seguridad y almacenamiento</h2>
               <p>
-                We implement appropriate technical and organizational security measures to
-                protect your personal information. Data submitted through our intake system
-                is stored securely using industry-standard encryption and access controls.
-                Our infrastructure providers include Vercel (hosting) and Supabase (database),
-                both of which maintain SOC 2 compliance.
+                Aplicamos medidas tecnicas y organizativas razonables para proteger la informacion. La infraestructura puede
+                incluir servicios de terceros como hosting y base de datos bajo buenas practicas de seguridad.
               </p>
             </section>
 
             <section>
-              <h2>Third-Party Services</h2>
+              <h2>5. Servicios de terceros</h2>
               <p>
-                We may use third-party services for analytics, communication, and hosting
-                purposes. These services have their own privacy policies governing their use
-                of your information. We do not sell your personal information to third parties.
+                Podemos usar proveedores externos para correo, mensajeria, almacenamiento y analitica. Cada proveedor tiene
+                sus propias politicas y terminos.
               </p>
             </section>
 
             <section>
-              <h2>Your Rights</h2>
+              <h2>6. Tus derechos</h2>
               <p>
-                You have the right to request access to, correction of, or deletion of your
-                personal information. To exercise these rights, please contact us at{" "}
-                <a href="mailto:elfren@smartdatapr.com" className="text-accent-light hover:underline">
-                  elfren@smartdatapr.com
-                </a>.
-              </p>
-            </section>
-
-            <section>
-              <h2>Applicable Law</h2>
-              <p>
-                This Privacy Policy is governed by the laws of the Commonwealth of Puerto
-                Rico and applicable federal laws of the United States.
-              </p>
-            </section>
-
-            <section>
-              <h2>Changes to This Policy</h2>
-              <p>
-                We may update this Privacy Policy from time to time. We will notify you of
-                any changes by posting the new Privacy Policy on this page and updating the
-                &quot;Last updated&quot; date.
-              </p>
-            </section>
-
-            <section>
-              <h2>Contact Us</h2>
-              <p>
-                If you have questions about this Privacy Policy, please contact us at:{" "}
+                Puedes solicitar acceso, correccion o eliminacion de tus datos escribiendo a {" "}
                 <a href="mailto:elfren@smartdatapr.com" className="text-accent-light hover:underline">
                   elfren@smartdatapr.com
                 </a>
+                .
               </p>
+            </section>
+
+            <section>
+              <h2>7. Jurisdiccion</h2>
+              <p>Esta politica se interpreta conforme a las leyes del Estado Libre Asociado de Puerto Rico.</p>
             </section>
           </div>
         </article>

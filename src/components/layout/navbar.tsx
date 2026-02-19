@@ -1,22 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform, AnimatePresence, useReducedMotion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { Menu, Scale, X } from "lucide-react";
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/constants";
 import { getDemoLink } from "@/lib/demo-link";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
   const prefersReducedMotion = useReducedMotion();
-
-  const bgOpacity = useTransform(scrollY, [0, 100], [0, 1]);
-  const height = useTransform(scrollY, [0, 100], [80, 64]);
   const demoLink = getDemoLink();
 
-  // Prevent body scroll when mobile menu is open
+  const bgOpacity = useTransform(scrollY, [0, 140], [0.45, 1]);
+  const navScale = useTransform(scrollY, [0, 140], [1, 0.975]);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -27,26 +26,23 @@ export function Navbar() {
   return (
     <>
       <motion.nav
-        style={{
-          height: prefersReducedMotion ? 72 : height,
-        }}
-        className="fixed top-0 right-0 left-0 z-50 flex items-center"
+        style={prefersReducedMotion ? {} : { scale: navScale }}
+        className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6"
       >
-        {/* Background layer */}
         <motion.div
-          style={{ opacity: prefersReducedMotion ? 1 : bgOpacity }}
-          className="absolute inset-0 border-b border-border bg-background/80 backdrop-blur-xl"
-        />
-
-        <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-6">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-0.5 text-xl font-bold">
-            <span className="text-foreground">SmartData</span>
-            <span className="text-accent-light">Legal</span>
+          style={prefersReducedMotion ? {} : { opacity: bgOpacity }}
+          className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border border-border bg-surface/70 px-4 backdrop-blur-xl sm:px-6"
+        >
+          <Link href="/" className="group inline-flex items-center gap-2.5">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-accent/40 bg-accent/10 text-accent-light">
+              <Scale className="h-4 w-4" />
+            </span>
+            <span className="text-base font-semibold tracking-tight sm:text-lg">
+              SmartData <span className="text-accent-light">Legal</span>
+            </span>
           </Link>
 
-          {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-7 md:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -58,50 +54,54 @@ export function Navbar() {
             ))}
             <a
               href={demoLink}
-              className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-accent-light"
+              className="rounded-lg border border-accent/40 bg-accent/15 px-4 py-2 text-sm font-semibold text-accent-light transition-all hover:border-accent-light hover:bg-accent/20"
             >
-              Book a Demo
+              Agendar demo
             </a>
           </div>
 
-          {/* Mobile hamburger */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="relative z-50 rounded-lg p-2 text-foreground md:hidden"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="rounded-lg border border-border p-2 text-foreground md:hidden"
+            aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
-        </div>
+        </motion.div>
+
+        <motion.div
+          className="mx-auto mt-2 h-0.5 w-full max-w-7xl origin-left rounded-full bg-accent/60"
+          style={prefersReducedMotion ? {} : { scaleX: scrollYProgress }}
+        />
       </motion.nav>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 bg-background/95 px-6 pt-28 backdrop-blur-xl md:hidden"
           >
-            <div className="flex h-full flex-col items-center justify-center gap-8">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-medium text-foreground transition-colors hover:text-accent-light"
-                >
-                  {link.label}
-                </a>
-              ))}
+            <div className="legal-panel rounded-2xl p-6">
+              <div className="space-y-4">
+                {NAV_LINKS.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block rounded-xl border border-border px-4 py-3 text-base font-medium text-foreground/90"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
               <a
                 href={demoLink}
                 onClick={() => setIsOpen(false)}
-                className="mt-4 rounded-lg bg-accent px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-accent-light"
+                className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-white"
               >
-                Book a Demo
+                Agendar demo
               </a>
             </div>
           </motion.div>

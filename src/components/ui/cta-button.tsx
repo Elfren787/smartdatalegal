@@ -22,25 +22,26 @@ export function CtaButton({
   const prefersReducedMotion = useReducedMotion();
 
   const baseStyles =
-    "inline-flex items-center justify-center rounded-lg px-8 py-4 text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-background";
+    "inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-background";
 
   const variants = {
     primary:
-      "bg-accent text-white hover:bg-accent-light animate-glow shadow-lg shadow-accent/20",
+      "animate-glow border border-accent-light/50 bg-gradient-to-r from-accent to-accent-light text-white shadow-lg shadow-accent/25 hover:-translate-y-0.5 hover:shadow-accent/35",
     secondary:
-      "border border-border text-foreground hover:border-accent-light hover:text-accent-light bg-transparent",
+      "border border-border bg-surface/60 text-foreground hover:border-accent/50 hover:bg-surface-light/60",
   };
 
   const motionProps = prefersReducedMotion
     ? {}
     : {
-        whileHover: { y: -2, scale: 1.02 },
-        whileTap: { scale: 0.98 },
+        whileHover: { y: -2 },
+        whileTap: { scale: 0.99 },
       };
 
   const combinedClassName = `${baseStyles} ${variants[variant]} ${className}`;
+  const isExternal = external || href.startsWith("mailto:") || href.startsWith("http");
 
-  if (external || href.startsWith("mailto:") || href.startsWith("http")) {
+  if (isExternal) {
     return (
       <motion.a
         href={href}
@@ -55,10 +56,10 @@ export function CtaButton({
   }
 
   return (
-    <Link href={href} passHref legacyBehavior>
-      <motion.a className={combinedClassName} {...motionProps}>
+    <motion.span {...motionProps} className="inline-flex">
+      <Link href={href} className={combinedClassName}>
         {children}
-      </motion.a>
-    </Link>
+      </Link>
+    </motion.span>
   );
 }

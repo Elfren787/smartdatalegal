@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
+import { CheckCircle2, Mail, PhoneCall } from "lucide-react";
 import { isCalendlyConfigured } from "@/lib/demo-link";
-import { CheckCircle } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -18,13 +18,15 @@ export function ContactForm() {
 
   if (hasCalendly && calendlyUrl) {
     return (
-      <div className="mx-auto max-w-2xl">
-        <iframe
-          src={calendlyUrl}
-          className="h-[700px] w-full rounded-xl border-0"
-          title="Schedule a demo"
-          loading="lazy"
-        />
+      <div className="mx-auto max-w-4xl">
+        <div className="legal-panel rounded-2xl p-4 sm:p-6">
+          <iframe
+            src={calendlyUrl}
+            className="h-[730px] w-full rounded-xl border-0 bg-white"
+            title="Agenda una demo de SmartData Legal"
+            loading="lazy"
+          />
+        </div>
       </div>
     );
   }
@@ -39,33 +41,33 @@ function FallbackForm() {
     firm: "",
     email: "",
     phone: "",
-    language: "en",
+    language: "es",
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
 
   function validate(): boolean {
     const newErrors: Partial<Record<keyof FormData, string>> = {};
 
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.firm.trim()) newErrors.firm = "Firm name is required";
+    if (!formData.name.trim()) newErrors.name = "El nombre es obligatorio";
+    if (!formData.firm.trim()) newErrors.firm = "El nombre del bufete es obligatorio";
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "El email es obligatorio";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = "Ingresa un email valido";
     }
-    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    if (!formData.phone.trim()) newErrors.phone = "El telefono es obligatorio";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   }
 
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
     if (!validate()) return;
 
-    const subject = encodeURIComponent("SmartData Legal Demo Request");
+    const subject = encodeURIComponent("Solicitud de demo SmartData Legal");
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nFirm: ${formData.firm}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nPreferred Language: ${formData.language === "en" ? "English" : "Spanish"}`
+      `Nombre: ${formData.name}\nBufete: ${formData.firm}\nEmail: ${formData.email}\nTelefono: ${formData.phone}\nIdioma preferido: ${formData.language === "en" ? "Ingles" : "Espanol"}`
     );
 
     window.location.href = `mailto:elfren@smartdatapr.com?subject=${subject}&body=${body}`;
@@ -74,112 +76,129 @@ function FallbackForm() {
 
   if (submitted) {
     return (
-      <div className="mx-auto max-w-md rounded-xl border border-border bg-surface p-8 text-center">
-        <CheckCircle className="mx-auto h-12 w-12 text-success" />
-        <h3 className="mt-4 text-xl font-semibold">Request Sent</h3>
-        <p className="mt-2 text-sm text-muted">
-          Your email client should have opened with the demo request. If it
-          didn&apos;t, please email us directly at{" "}
-          <a
-            href="mailto:elfren@smartdatapr.com"
-            className="text-accent-light hover:underline"
-          >
-            elfren@smartdatapr.com
-          </a>
-        </p>
+      <div className="mx-auto max-w-xl">
+        <div className="legal-panel rounded-2xl p-8 text-center">
+          <CheckCircle2 className="mx-auto h-11 w-11 text-success" />
+          <h3 className="mt-4 text-2xl font-semibold">Solicitud preparada</h3>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Tu cliente de email debe abrirse con los datos del demo. Si no se abre, escribenos a {" "}
+            <a href="mailto:elfren@smartdatapr.com" className="text-accent-light hover:underline">
+              elfren@smartdatapr.com
+            </a>
+            .
+          </p>
+        </div>
       </div>
     );
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mx-auto max-w-md space-y-5 rounded-xl border border-border bg-surface p-8"
-      noValidate
-    >
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-foreground">
-          Full Name
-        </label>
-        <input
+    <form onSubmit={handleSubmit} className="mx-auto max-w-xl space-y-5 legal-panel rounded-2xl p-6 sm:p-8" noValidate>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field
           id="name"
-          type="text"
+          label="Nombre completo"
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder-muted focus:border-accent-light focus:ring-2 focus:ring-accent-light/20 focus:outline-none"
-          placeholder="Your full name"
+          onChange={(value) => setFormData({ ...formData, name: value })}
+          placeholder="Tu nombre"
+          error={errors.name}
         />
-        {errors.name && <p className="mt-1 text-sm text-urgency">{errors.name}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="firm" className="block text-sm font-medium text-foreground">
-          Firm Name
-        </label>
-        <input
+        <Field
           id="firm"
-          type="text"
+          label="Nombre del bufete"
           value={formData.firm}
-          onChange={(e) => setFormData({ ...formData, firm: e.target.value })}
-          className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder-muted focus:border-accent-light focus:ring-2 focus:ring-accent-light/20 focus:outline-none"
-          placeholder="Your law firm"
+          onChange={(value) => setFormData({ ...formData, firm: value })}
+          placeholder="Tu firma legal"
+          error={errors.firm}
         />
-        {errors.firm && <p className="mt-1 text-sm text-urgency">{errors.firm}</p>}
       </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-foreground">
-          Email
-        </label>
-        <input
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field
           id="email"
-          type="email"
+          label="Correo electronico"
           value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder-muted focus:border-accent-light focus:ring-2 focus:ring-accent-light/20 focus:outline-none"
-          placeholder="you@firm.com"
+          onChange={(value) => setFormData({ ...formData, email: value })}
+          placeholder="tu@bufete.com"
+          error={errors.email}
+          type="email"
+          icon={<Mail className="h-4 w-4" />}
         />
-        {errors.email && <p className="mt-1 text-sm text-urgency">{errors.email}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-foreground">
-          Phone
-        </label>
-        <input
+        <Field
           id="phone"
-          type="tel"
+          label="Telefono"
           value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder-muted focus:border-accent-light focus:ring-2 focus:ring-accent-light/20 focus:outline-none"
+          onChange={(value) => setFormData({ ...formData, phone: value })}
           placeholder="(787) 555-0123"
+          error={errors.phone}
+          type="tel"
+          icon={<PhoneCall className="h-4 w-4" />}
         />
-        {errors.phone && <p className="mt-1 text-sm text-urgency">{errors.phone}</p>}
       </div>
 
       <div>
-        <label htmlFor="language" className="block text-sm font-medium text-foreground">
-          Preferred Language
+        <label htmlFor="language" className="block text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+          Idioma preferido
         </label>
         <select
           id="language"
           value={formData.language}
-          onChange={(e) =>
-            setFormData({ ...formData, language: e.target.value as "en" | "es" })
-          }
-          className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground focus:border-accent-light focus:ring-2 focus:ring-accent-light/20 focus:outline-none"
+          onChange={(e) => setFormData({ ...formData, language: e.target.value as "en" | "es" })}
+          className="mt-2 w-full rounded-xl border border-border bg-background/45 px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent-light"
         >
-          <option value="en">English</option>
-          <option value="es">Spanish</option>
+          <option value="es">Espanol</option>
+          <option value="en">Ingles</option>
         </select>
       </div>
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-accent px-6 py-3 text-base font-semibold text-white transition-all hover:bg-accent-light focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-background focus:outline-none"
+        className="w-full rounded-xl border border-accent-light/45 bg-gradient-to-r from-accent to-accent-light px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-lg shadow-accent/30 transition hover:brightness-110"
       >
-        Request a Demo
+        Solicitar demo
       </button>
     </form>
+  );
+}
+
+function Field({
+  id,
+  label,
+  value,
+  onChange,
+  placeholder,
+  error,
+  type = "text",
+  icon,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+  error?: string;
+  type?: string;
+  icon?: ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+        {label}
+      </label>
+      <div className="relative mt-2">
+        {icon ? <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted">{icon}</span> : null}
+        <input
+          id={id}
+          type={type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className={`w-full rounded-xl border border-border bg-background/45 px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent-light ${
+            icon ? "pl-10" : ""
+          }`}
+          placeholder={placeholder}
+        />
+      </div>
+      {error ? <p className="mt-1.5 text-xs text-urgency">{error}</p> : null}
+    </div>
   );
 }

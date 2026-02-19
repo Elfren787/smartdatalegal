@@ -16,35 +16,35 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "SmartData Legal | AI-Powered Legal Intake for Puerto Rico Law Firms",
+    default: "SmartData Legal | Intake legal con IA para bufetes en Puerto Rico",
     template: "%s | SmartData Legal",
   },
   description:
-    "Automate client intake for your law firm. Respond in under 60 seconds, score leads with AI, and never lose a potential client again. Bilingual EN/ES.",
+    "Automatiza intake legal para tu firma. Responde en menos de 60 segundos, prioriza leads con IA y mejora el trabajo de paralegales y abogados.",
   keywords: [
-    "legal intake",
-    "law firm automation",
-    "AI legal",
-    "Puerto Rico law firms",
-    "bilingual intake",
-    "lead scoring",
-    "client intake software",
+    "intake legal",
+    "automatizacion para bufetes",
+    "IA legal",
+    "bufetes en Puerto Rico",
+    "intake bilingue",
+    "priorizacion de leads",
+    "software para firmas legales",
   ],
   authors: [{ name: "SmartData Legal" }],
   openGraph: {
-    title: "SmartData Legal | AI-Powered Legal Intake",
+    title: "SmartData Legal | Intake legal con IA",
     description:
-      "Automate client intake for your law firm. Respond in under 60 seconds with bilingual AI-powered lead capture.",
+      "Plataforma de intake legal bilingue para responder mas rapido y no perder leads valiosos.",
     url: "https://smartdatalegal.com",
     siteName: "SmartData Legal",
-    locale: "en_US",
+    locale: "es_PR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SmartData Legal | AI-Powered Legal Intake",
+    title: "SmartData Legal | Intake legal con IA",
     description:
-      "Automate client intake for your law firm. Respond in under 60 seconds with bilingual AI-powered lead capture.",
+      "Intake bilingue con IA para bufetes que necesitan velocidad, control y conversion.",
   },
   robots: {
     index: true,
@@ -58,12 +58,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${playfair.variable} ${dmSans.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="es" className="dark">
+      <body className={`${playfair.variable} ${dmSans.variable} antialiased`}>{children}</body>
     </html>
   );
 }

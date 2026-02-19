@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CtaButton } from "@/components/ui/cta-button";
 import { getDemoLink } from "@/lib/demo-link";
@@ -9,40 +10,30 @@ export function FinalCta() {
 
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
-      {/* Accent gradient background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 70%)",
-        }}
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.2),transparent_60%)]"
       />
 
-      <div className="mx-auto max-w-3xl px-6 text-center">
+      <div className="mx-auto max-w-4xl px-6 text-center">
         <ScrollReveal>
-          <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            See it in action with your own cases.
-          </h2>
-        </ScrollReveal>
+          <div className="legal-panel rounded-3xl px-6 py-10 sm:px-10 sm:py-12">
+            <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+              Mira SmartData Legal funcionando con tus tipos de caso.
+            </h2>
 
-        <ScrollReveal delay={0.15}>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            Book a 15-minute demo. We will show you exactly how SmartData Legal
-            would work for your firm &mdash; with your case types, in your
-            language.
-          </p>
-        </ScrollReveal>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              En 15 minutos te mostramos cómo mejorar conversión de leads, aliviar trabajo repetitivo del paralegal y darle a abogados mejor visibilidad para decidir rápido.
+            </p>
 
-        <ScrollReveal delay={0.3}>
-          <div className="mt-10">
-            <CtaButton href={demoLink} variant="primary">
-              Schedule Your Demo
-            </CtaButton>
+            <div className="mt-10">
+              <CtaButton href={demoLink} variant="primary" className="gap-2">
+                Agendar demo <ArrowRight className="h-4 w-4" />
+              </CtaButton>
+            </div>
+
+            <p className="mt-4 text-sm text-muted">Demo gratis. Sin compromiso. Enfocado en bufetes de Puerto Rico.</p>
           </div>
-          <p className="mt-4 text-sm text-muted">
-            Free demo. No commitment. Live walkthrough with your team.
-          </p>
         </ScrollReveal>
       </div>
     </section>

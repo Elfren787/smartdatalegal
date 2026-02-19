@@ -1,0 +1,68 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1326"/>
+      <stop offset="1" stop-color="#0C1B35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" rx="22" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="820" rx="16" fill="#0E1D35" stroke="#274466"/>
+
+  <text x="72" y="92" fill="#E6F1FF" font-family="Arial" font-size="22" font-weight="700">SLA & Recovery Operations</text>
+
+  <rect x="72" y="120" width="300" height="140" rx="14" fill="#132744"/>
+  <text x="96" y="156" fill="#A8C4EA" font-family="Arial" font-size="14">At-risk leads</text>
+  <text x="96" y="224" fill="#FFB4B4" font-family="Arial" font-size="64" font-weight="700">06</text>
+
+  <rect x="388" y="120" width="300" height="140" rx="14" fill="#132744"/>
+  <text x="412" y="156" fill="#A8C4EA" font-family="Arial" font-size="14">Recovered in 24h</text>
+  <text x="412" y="224" fill="#9EEAB8" font-family="Arial" font-size="64" font-weight="700">11</text>
+
+  <rect x="704" y="120" width="424" height="140" rx="14" fill="#132744"/>
+  <text x="728" y="156" fill="#A8C4EA" font-family="Arial" font-size="14">First contact compliance</text>
+  <rect x="728" y="178" width="352" height="20" rx="10" fill="#1B365B"/>
+  <rect x="728" y="178" width="286" height="20" rx="10" fill="#60A5FA"/>
+  <text x="728" y="232" fill="#CFE3FF" font-family="Arial" font-size="18" font-weight="700">81.2%</text>
+
+  <rect x="72" y="286" width="1056" height="248" rx="14" fill="#11233D"/>
+  <text x="96" y="326" fill="#E6F1FF" font-family="Arial" font-size="16" font-weight="700">Reminder engine output</text>
+
+  <rect x="96" y="346" width="1008" height="48" rx="10" fill="#152C4A"/>
+  <text x="120" y="376" fill="#A8C4EA" font-family="Arial" font-size="13">Lead</text>
+  <text x="420" y="376" fill="#A8C4EA" font-family="Arial" font-size="13">SLA level</text>
+  <text x="620" y="376" fill="#A8C4EA" font-family="Arial" font-size="13">Minutes overdue</text>
+  <text x="860" y="376" fill="#A8C4EA" font-family="Arial" font-size="13">Reminder status</text>
+
+  <rect x="96" y="402" width="1008" height="52" rx="10" fill="#0F223A"/>
+  <text x="120" y="434" fill="#EAF3FF" font-family="Arial" font-size="14">Marisol Rivera</text>
+  <text x="420" y="434" fill="#EAF3FF" font-family="Arial" font-size="14">L3</text>
+  <text x="620" y="434" fill="#FF9E9E" font-family="Arial" font-size="14">43</text>
+  <text x="860" y="434" fill="#9EEAB8" font-family="Arial" font-size="14">sent</text>
+
+  <rect x="96" y="462" width="1008" height="52" rx="10" fill="#0F223A"/>
+  <text x="120" y="494" fill="#EAF3FF" font-family="Arial" font-size="14">Jose Martinez</text>
+  <text x="420" y="494" fill="#EAF3FF" font-family="Arial" font-size="14">L2</text>
+  <text x="620" y="494" fill="#FFD9A0" font-family="Arial" font-size="14">18</text>
+  <text x="860" y="494" fill="#9EEAB8" font-family="Arial" font-size="14">sent</text>
+
+  <rect x="72" y="558" width="516" height="278" rx="14" fill="#11233D"/>
+  <text x="96" y="598" fill="#E6F1FF" font-family="Arial" font-size="16" font-weight="700">Daily digest sample</text>
+  <text x="96" y="630" fill="#C7DCF9" font-family="Arial" font-size="13">Total leads: 19 · Hot: 6 · At-risk: 3</text>
+  <rect x="96" y="648" width="468" height="2" fill="#28486F"/>
+  <text x="96" y="682" fill="#A8C4EA" font-family="Arial" font-size="13">Top at-risk: Marisol Rivera (Hot 91)</text>
+  <text x="96" y="708" fill="#A8C4EA" font-family="Arial" font-size="13">Top conversion source: Organic Search</text>
+  <text x="96" y="734" fill="#A8C4EA" font-family="Arial" font-size="13">Owner load: intake_admin (12 active)</text>
+  <text x="96" y="770" fill="#9EEAB8" font-family="Arial" font-size="13">Digest delivery: success</text>
+
+  <rect x="612" y="558" width="516" height="278" rx="14" fill="#11233D"/>
+  <text x="636" y="598" fill="#E6F1FF" font-family="Arial" font-size="16" font-weight="700">Escalation timeline</text>
+  <circle cx="650" cy="642" r="6" fill="#60A5FA"/>
+  <text x="668" y="647" fill="#CFE3FF" font-family="Arial" font-size="13">T+0: Lead created</text>
+  <circle cx="650" cy="676" r="6" fill="#F59E0B"/>
+  <text x="668" y="681" fill="#CFE3FF" font-family="Arial" font-size="13">T+15m: Reminder queued</text>
+  <circle cx="650" cy="710" r="6" fill="#EF4444"/>
+  <text x="668" y="715" fill="#CFE3FF" font-family="Arial" font-size="13">T+30m: At-risk alert fired</text>
+  <circle cx="650" cy="744" r="6" fill="#22C55E"/>
+  <text x="668" y="749" fill="#CFE3FF" font-family="Arial" font-size="13">T+42m: Contact completed</text>
+</svg>

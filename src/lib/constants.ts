@@ -8,36 +8,36 @@ import {
 } from "lucide-react";
 
 export const NAV_LINKS = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "Built for PR", href: "#bilingual" },
+  { label: "Cómo funciona", href: "#how-it-works" },
+  { label: "Prueba visual", href: "#proof" },
+  { label: "Resultados", href: "#value" },
 ] as const;
 
 export const STATS = [
-  { value: "< 60s", label: "Lead Response Time" },
-  { value: "EN / ES", label: "Fully Bilingual Intake" },
-  { value: "24/7", label: "Always-On Capture" },
+  { value: "60s", label: "Primera respuesta media", detail: "en leads prioritarios" },
+  { value: "2", label: "Idiomas activos", detail: "inglés y español" },
+  { value: "24/7", label: "Cobertura de intake", detail: "sin perder leads fuera de horario" },
 ] as const;
 
 export const TIMELINE_STEPS = [
   {
     time: "9:02 PM",
-    description: "New lead submits form. Personal injury, car accident.",
+    description: "Un lead nuevo de lesiones personales envía su caso desde móvil.",
     status: "new" as const,
   },
   {
     time: "9:15 PM",
-    description: "Lead gets impatient. Googles another firm.",
+    description: "El lead se impacienta y busca otro bufete en Google.",
     status: "warning" as const,
   },
   {
     time: "9:47 PM",
-    description: "Lead fills out competitor's form. Gets a callback.",
+    description: "Otro despacho responde primero y agenda la consulta.",
     status: "lost" as const,
   },
   {
-    time: "Next morning",
-    description: "Your paralegal sees the form. Too late.",
+    time: "Al día siguiente",
+    description: "Tu equipo abre el formulario, pero el caso ya se fue.",
     status: "dead" as const,
   },
 ] as const;
@@ -45,109 +45,106 @@ export const TIMELINE_STEPS = [
 export const PAIN_POINTS = [
   {
     number: 1,
-    title: "Slow response = lost revenue",
+    title: "Respuesta lenta = dinero perdido",
     description:
-      "Responding within 5 minutes makes you 10x more likely to convert. Most firms take hours or days.",
+      "Cada minuto cuenta. Si el lead espera demasiado, termina firmando con otro bufete.",
   },
   {
     number: 2,
-    title: "Paralegals buried in repetitive work",
+    title: "Paralegales atrapados en tareas repetitivas",
     description:
-      "Collecting names, dates, case details over and over. High-value staff doing low-value data entry.",
+      "El equipo legal pierde tiempo capturando datos una y otra vez en lugar de avanzar casos.",
   },
   {
     number: 3,
-    title: "No system, no visibility",
+    title: "Sin visibilidad operativa",
     description:
-      "Leads tracked in Excel, WhatsApp, sticky notes. No way to know who is hot, who is cold, or who fell through the cracks.",
+      "Sin una cola central, se pierde control de seguimiento, prioridad y responsable por lead.",
   },
 ] as const;
 
 export const SOLUTION_STEPS = [
   {
     step: "01",
-    title: "Instant Bilingual Intake",
-    tag: "Under 60 seconds",
+    title: "Intake bilingüe inmediato",
+    tag: "Menos de 60 segundos",
     description:
-      "A potential client fills out your smart form in English or Spanish. The system collects case type, incident details, injuries, and documents in a guided flow.",
+      "El cliente completa un flujo guiado en inglés o español con datos del caso y documentos.",
   },
   {
     step: "02",
-    title: "AI Scores and Prioritizes",
-    tag: "AI-Powered",
+    title: "Resumen legal y score con IA",
+    tag: "Claude",
     description:
-      "AI analyzes the intake, generates a case summary, scores the lead as Hot, Warm, or Cold, and flags risks like statute of limitations or unclear liability.",
+      "Cada envío se resume, se clasifica en prioridad alta/media/baja y queda listo para revisión del equipo.",
   },
   {
     step: "03",
-    title: "Your Team Takes Over",
-    tag: "Action-Ready",
+    title: "Cola operativa para el despacho",
+    tag: "Listo para accionar",
     description:
-      "Hot leads trigger instant alerts. Your dashboard shows every lead prioritized, assigned, and tracked with SLAs. No lead falls through the cracks.",
+      "Paralegales y abogados reciben leads priorizados con responsable, estado y SLA.",
   },
 ] as const;
 
 export const FEATURES = [
   {
     icon: LayoutDashboard,
-    title: "Live Dashboard and KPIs",
+    title: "Centro de control de leads",
     description:
-      "See every lead, its status, score, owner, and SLA in real time. Filter by case type, source, or date. Export to CSV anytime.",
+      "Visualiza cada lead por estado, score, responsable y SLA en un solo panel.",
   },
   {
     icon: Brain,
-    title: "AI Lead Scoring",
+    title: "Calificación de leads con IA",
     description:
-      "Every lead is automatically scored Hot, Warm, or Cold based on case details, urgency, and potential value. Hot leads get priority.",
+      "La IA genera contexto útil para que paralegales y abogados prioricen rápido.",
   },
   {
     icon: Upload,
-    title: "Document Uploads",
+    title: "Captura de documentos",
     description:
-      "Clients can upload photos, police reports, medical records directly during intake. Everything attached to the lead record.",
+      "Fotos, reportes y evidencia se adjuntan al lead desde el intake inicial.",
   },
   {
     icon: GitBranch,
-    title: "Complete Status Workflow",
+    title: "Flujo real de estados",
     description:
-      "Track every lead from New to Contacted to Consultation to Signed to Declined. Internal notes, activity timeline, and owner assignment built in.",
+      "Seguimiento claro en Nuevo, Contactado, Firmado y Declinado.",
   },
   {
     icon: Bell,
-    title: "SMS and Email Alerts",
+    title: "Alertas por tiempo",
     description:
-      "Instant notifications when hot leads come in. Automated confirmations to clients. Built on Twilio and Resend for reliability.",
+      "Recordatorios y avisos para evitar que un lead valioso se enfríe.",
   },
   {
     icon: Plug,
-    title: "Designed to Complement Your Tools",
+    title: "Capa de conversión legal",
     description:
-      "SmartData Legal is your conversion layer -- designed to work alongside your existing legal CRM and case management workflow.",
+      "Se integra al trabajo del bufete y ayuda al equipo sin reemplazarlo.",
   },
 ] as const;
 
 export const BILINGUAL_CONTENT = {
-  en: "Every intake form, every notification, every client-facing touchpoint works seamlessly in English and Spanish. Your clients choose their language. Your team sees everything translated and ready to act on.",
-  es: "Cada formulario de intake, cada notificacion, cada punto de contacto con el cliente funciona en ingles y espanol. Sus clientes eligen su idioma. Su equipo ve todo traducido y listo para actuar.",
+  en: "El sistema permite atención en inglés y español, mientras el equipo legal recibe la información estructurada en una sola cola operativa.",
+  es: "Cada formulario, notificación y punto de contacto funciona en inglés y español. Tus clientes eligen idioma y tu equipo recibe datos listos para actuar.",
 } as const;
 
 export const TESTIMONIAL_PLACEHOLDERS = [
   {
-    firm: "Rivera & Associates",
+    firm: "Espacio piloto 01",
     location: "San Juan, PR",
-    quote:
-      "Testimonial placeholder -- real client feedback coming soon.",
+    quote: "Aquí irá el testimonio real del primer bufete piloto.",
   },
   {
-    firm: "Torres Legal Group",
-    location: "Bayamon, PR",
-    quote:
-      "Testimonial placeholder -- real client feedback coming soon.",
+    firm: "Espacio piloto 02",
+    location: "Carolina, PR",
+    quote: "Aquí irá el testimonio real del segundo bufete piloto.",
   },
   {
-    firm: "Mendez Law Office",
+    firm: "Espacio piloto 03",
     location: "Ponce, PR",
-    quote:
-      "Testimonial placeholder -- real client feedback coming soon.",
+    quote: "Aquí irá el testimonio real del tercer bufete piloto.",
   },
 ] as const;
