@@ -17,8 +17,8 @@ export function Bilingual() {
     <section id="bilingual" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
-          badge="Bilingue"
-          title="Cobertura total en ingles y espanol desde el primer contacto."
+          badge="Bilingüe"
+          title="Cobertura total en inglés y español desde el primer contacto."
         />
 
         <ScrollReveal className="mx-auto mt-12 max-w-5xl">
@@ -26,7 +26,7 @@ export function Bilingual() {
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
               <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/90">
                 <Languages className="h-4 w-4 text-accent-light" />
-                Operacion bilingue
+                Operación bilingüe
               </div>
 
               <div className="inline-flex rounded-xl border border-border bg-background/45 p-1.5">
@@ -76,7 +76,7 @@ export function Bilingual() {
                 <div className="space-y-2 text-sm">
                   <div className="rounded-lg border border-border px-3 py-2 text-foreground/85">Paralegales reciben intake estructurado desde el inicio</div>
                   <div className="rounded-lg border border-border px-3 py-2 text-foreground/85">Abogados ven contexto y prioridad antes de la consulta</div>
-                  <div className="rounded-lg border border-border px-3 py-2 text-foreground/85">Socios monitorean respuesta y conversion en un solo panel</div>
+                  <div className="rounded-lg border border-border px-3 py-2 text-foreground/85">Socios monitorean respuesta y conversión en un solo panel</div>
                 </div>
               </div>
             </div>

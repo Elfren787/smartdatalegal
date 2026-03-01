@@ -90,39 +90,39 @@ export const SOLUTION_STEPS = [
 export const FEATURES = [
   {
     icon: LayoutDashboard,
-    title: "Centro de control de leads",
+    title: "Recupera leads que hoy se pierden",
     description:
-      "Visualiza cada lead por estado, score, responsable y SLA en un solo panel.",
+      "Dashboard centralizado donde ves qué leads están en riesgo SLA antes de que se enfríen. Nunca más pierdes un caso por no saber que existía.",
   },
   {
     icon: Brain,
-    title: "Calificación de leads con IA",
+    title: "Tu equipo actúa, no captura datos",
     description:
-      "La IA genera contexto útil para que paralegales y abogados prioricen rápido.",
+      "La IA resume casos complejos en 30 segundos y los clasifica por prioridad. Paralegales llaman listos para avanzar, no para hacer preguntas básicas.",
   },
   {
     icon: Upload,
-    title: "Captura de documentos",
+    title: "Evidencia desde el primer contacto",
     description:
-      "Fotos, reportes y evidencia se adjuntan al lead desde el intake inicial.",
+      "Fotos del accidente, reportes médicos y documentos llegan con el lead. Tu equipo tiene contexto completo antes de la primera llamada.",
   },
   {
     icon: GitBranch,
-    title: "Flujo real de estados",
+    title: "Responsabilidad clara por cada lead",
     description:
-      "Seguimiento claro en Nuevo, Contactado, Firmado y Declinado.",
+      "Cada lead tiene propietario, estado y SLA visible. Sin leads huérfanos. Sabes exactamente quién tiene qué y cuánto lleva sin acción.",
   },
   {
     icon: Bell,
-    title: "Alertas por tiempo",
+    title: "Cero leads enfriados",
     description:
-      "Recordatorios y avisos para evitar que un lead valioso se enfríe.",
+      "Alertas automáticas antes de que un lead valioso se enfríe. El sistema te avisa — no depende de que alguien se acuerde.",
   },
   {
     icon: Plug,
-    title: "Capa de conversión legal",
+    title: "Se adapta a tu despacho, no al revés",
     description:
-      "Se integra al trabajo del bufete y ayuda al equipo sin reemplazarlo.",
+      "No reemplaza al paralegal ni a tu CRM. Le quita el trabajo repetitivo y entrega leads listos para accionar.",
   },
 ] as const;
 
@@ -131,20 +131,82 @@ export const BILINGUAL_CONTENT = {
   es: "Cada formulario, notificación y punto de contacto funciona en inglés y español. Tus clientes eligen idioma y tu equipo recibe datos listos para actuar.",
 } as const;
 
-export const TESTIMONIAL_PLACEHOLDERS = [
+export const PILOT_BENEFITS = [
   {
-    firm: "Espacio piloto 01",
-    location: "San Juan, PR",
-    quote: "Aquí irá el testimonio real del primer bufete piloto.",
+    title: "Configuración incluida",
+    description: "Nosotros hacemos todo el setup. Tu equipo solo recibe leads listos para actuar.",
   },
   {
-    firm: "Espacio piloto 02",
-    location: "Carolina, PR",
-    quote: "Aquí irá el testimonio real del segundo bufete piloto.",
+    title: "30 días para ver resultados",
+    description: "Sin contratos largos. Ve los números reales antes de comprometerte.",
   },
   {
-    firm: "Espacio piloto 03",
-    location: "Ponce, PR",
-    quote: "Aquí irá el testimonio real del tercer bufete piloto.",
+    title: "Soporte directo con el fundador",
+    description: "Trabajas conmigo directamente. Cero burocracia, cero tickets de soporte genéricos.",
+  },
+] as const;
+
+export const INDUSTRY_STATS = [
+  { value: "78%", label: "de clientes firman con el primer bufete que responde" },
+  { value: "30–50%", label: "de leads se pierden por respuesta lenta" },
+  { value: "< 5 min", label: "es la ventana crítica para convertir un lead caliente" },
+] as const;
+
+export const TARGET_AUDIENCE = {
+  title: "¿Es SmartData Legal para tu firma?",
+  subtitle: "Diseñado para bufetes en Puerto Rico que ya invierten en crecer.",
+  criteria: [
+    "Inviertes en anuncios (Google, Facebook, referrals) y recibes 10+ leads al mes",
+    "Practicas: lesiones personales, negligencia médica, derechos civiles o acciones de clase",
+    "Tienes 1–20 personas en el equipo (socios, abogados, paralegales)",
+    "Pierdes casos porque el lead se enfría antes de la primera llamada",
+  ],
+} as const;
+
+export const ROI_DATA = {
+  caseValue: "$15,000",
+  casesPerMonth: "2–3",
+  monthlyRecovery: "$30,000–$45,000",
+  paybackPeriod: "menos de 30 días",
+} as const;
+
+export const ONBOARDING_STEPS = [
+  {
+    day: "Día 1–3",
+    title: "Configuración completa",
+    description: "Configuramos tu cuenta, personalizamos el intake para tus áreas de práctica y conectamos notificaciones.",
+  },
+  {
+    day: "Día 4–7",
+    title: "Training del equipo",
+    description: "Sesión en vivo con tu equipo. Les enseñamos a usar la cola de leads y el dashboard en 30 minutos.",
+  },
+  {
+    day: "Día 8–30",
+    title: "Acompañamiento activo",
+    description: "Monitoreo de resultados, ajustes al scoring y soporte directo por WhatsApp.",
+  },
+] as const;
+
+export const FAQ_ITEMS = [
+  {
+    question: "¿Cuánto cuesta?",
+    answer: "Tenemos un plan de piloto a precio especial para los primeros bufetes. Agenda un demo de 15 minutos y te damos los detalles según el tamaño de tu firma.",
+  },
+  {
+    question: "¿Hay contrato a largo plazo?",
+    answer: "No. El piloto es de 30 días sin compromiso. Si no ves valor, cancelas sin drama.",
+  },
+  {
+    question: "¿Es segura la información de mis clientes?",
+    answer: "Sí. Los datos están encriptados, almacenados en servidores cloud seguros y nunca se usan para entrenar IA. Solo tu equipo autorizado tiene acceso.",
+  },
+  {
+    question: "¿Qué necesito para el demo?",
+    answer: "Solo 15 minutos y una laptop o celular. Te mostramos la plataforma en vivo con un caso simulado de tu área de práctica.",
+  },
+  {
+    question: "¿Se integra con Clio, MyCase u otros sistemas?",
+    answer: "SmartData Legal maneja el intake — el momento antes de que el caso entre a tu CRM. Los datos se exportan fácilmente a cualquier sistema que ya uses.",
   },
 ] as const;

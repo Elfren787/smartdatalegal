@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/demo/contact-form";
 export const metadata: Metadata = {
   title: "Agendar demo",
   description:
-    "Agenda una demostracion de 15 minutos de SmartData Legal para ver como tu firma puede responder mas rapido y convertir mas leads.",
+    "Agenda una demostración de 15 minutos de SmartData Legal para ver cómo tu firma puede responder más rápido y convertir más leads.",
 };
 
 export default function DemoPage() {
@@ -26,7 +26,7 @@ export default function DemoPage() {
             </span>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Agenda tu demo</h1>
             <p className="mt-4 text-lg leading-relaxed text-muted">
-              15 minutos. Tus tipos de caso. Tu operacion legal.
+              15 minutos. Tus tipos de caso. Tu operación legal.
             </p>
           </div>
 

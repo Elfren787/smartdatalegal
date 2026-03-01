@@ -10,7 +10,7 @@ export function Footer() {
               SmartData <span className="text-accent-light">Legal</span>
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-              Plataforma de intake legal con IA para equipos de paralegales y abogados que buscan mas conversion y mejor control.
+              Plataforma de intake legal con IA para equipos de paralegales y abogados que buscan más conversión y mejor control.
             </p>
           </div>
 
@@ -43,12 +43,12 @@ export function Footer() {
             <ul className="mt-3 space-y-2">
               <li>
                 <Link href="/privacy" className="text-sm text-foreground/80 transition-colors hover:text-foreground">
-                  Politica de privacidad
+                  Política de privacidad
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="text-sm text-foreground/80 transition-colors hover:text-foreground">
-                  Terminos del servicio
+                  Términos del servicio
                 </Link>
               </li>
               <li>

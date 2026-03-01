@@ -23,18 +23,18 @@ export const metadata: Metadata = {
     "Automatiza intake legal para tu firma. Responde en menos de 60 segundos, prioriza leads con IA y mejora el trabajo de paralegales y abogados.",
   keywords: [
     "intake legal",
-    "automatizacion para bufetes",
+    "automatización para bufetes",
     "IA legal",
     "bufetes en Puerto Rico",
-    "intake bilingue",
-    "priorizacion de leads",
+    "intake bilingüe",
+    "priorización de leads",
     "software para firmas legales",
   ],
   authors: [{ name: "SmartData Legal" }],
   openGraph: {
     title: "SmartData Legal | Intake legal con IA",
     description:
-      "Plataforma de intake legal bilingue para responder mas rapido y no perder leads valiosos.",
+      "Plataforma de intake legal bilingüe para responder más rápido y no perder leads valiosos.",
     url: "https://smartdatalegal.com",
     siteName: "SmartData Legal",
     locale: "es_PR",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SmartData Legal | Intake legal con IA",
     description:
-      "Intake bilingue con IA para bufetes que necesitan velocidad, control y conversion.",
+      "Intake bilingüe con IA para bufetes que necesitan velocidad, control y conversión.",
   },
   robots: {
     index: true,

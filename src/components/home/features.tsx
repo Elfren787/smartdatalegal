@@ -16,7 +16,7 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           badge="Plataforma"
-          title="Hecho para velocidad de intake, claridad legal y ejecucion del equipo."
+          title="Hecho para velocidad de intake, claridad legal y ejecución del equipo."
           subtitle="Funciones reales pensadas para paralegales, abogados y socios que necesitan control operativo."
         />
 

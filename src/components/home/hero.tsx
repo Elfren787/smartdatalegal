@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock3, Languages, ShieldCheck } from "lucide-react";
+import { ArrowRight, Clock3, Languages, ShieldCheck, MessageCircle } from "lucide-react";
 import { GradientBg } from "@/components/ui/gradient-bg";
 import { CtaButton } from "@/components/ui/cta-button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { getDemoLink } from "@/lib/demo-link";
+import { getDemoLink, getWhatsAppLink } from "@/lib/demo-link";
 
 const previewRows = [
   { name: "Choque vehicular - San Juan", score: "Alta 91", sla: "En riesgo" },
@@ -16,6 +16,7 @@ const previewRows = [
 
 export function Hero() {
   const demoLink = getDemoLink();
+  const whatsappLink = getWhatsAppLink();
   const [spot, setSpot] = useState({ x: 42, y: 16 });
 
   return (
@@ -65,13 +66,13 @@ export function Hero() {
           <ScrollReveal delay={0.42}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <CtaButton href={demoLink} variant="primary" className="gap-2">
-                Agendar demo gratis <ArrowRight className="h-4 w-4" />
+                Agendar demo (15 min) <ArrowRight className="h-4 w-4" />
               </CtaButton>
-              <CtaButton href="#how-it-works" variant="secondary">
-                Ver cómo funciona
+              <CtaButton href={whatsappLink} variant="secondary" external className="gap-2">
+                <MessageCircle className="h-4 w-4" /> WhatsApp directo
               </CtaButton>
             </div>
-            <p className="mt-4 text-sm text-muted">15 minutos. Casos reales. Sin compromiso.</p>
+            <p className="mt-4 text-sm text-muted">Casos reales. Sin compromiso. Solo para bufetes en PR.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.52}>

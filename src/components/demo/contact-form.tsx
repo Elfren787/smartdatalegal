@@ -146,8 +146,8 @@ function FallbackForm() {
           onChange={(e) => setFormData({ ...formData, language: e.target.value as "en" | "es" })}
           className="mt-2 w-full rounded-xl border border-border bg-background/45 px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent-light"
         >
-          <option value="es">Espanol</option>
-          <option value="en">Ingles</option>
+          <option value="es">Español</option>
+          <option value="en">Inglés</option>
         </select>
       </div>
 
