@@ -16,8 +16,8 @@ export function ValueGallery() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading
           badge="Prueba visual"
-          title="No es una página bonita: es una operación de intake completa para tu firma."
-          subtitle="Cola priorizada, intake móvil bilingüe y trazabilidad para que paralegales y abogados trabajen con más velocidad y contexto."
+          title="Así se ve tu operación de intake funcionando desde el día uno."
+          subtitle="Cola priorizada, intake bilingüe y trazabilidad real para que tu equipo responda más rápido y firme más casos."
         />
 
         <StaggerContainer className="mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]" staggerDelay={0.1}>

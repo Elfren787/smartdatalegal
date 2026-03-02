@@ -44,22 +44,22 @@ export function Hero() {
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-2 backdrop-blur-sm">
               <span className="animate-pulse-dot h-2 w-2 rounded-full bg-success" />
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/85">
-                Aceptando bufetes en Puerto Rico
+                Programa piloto — solo 3–5 bufetes en PR
               </span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.18}>
             <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl md:text-6xl">
-              Tus anuncios traen leads.
+              Recupera los leads que hoy pierdes
               <br />
-              <span className="text-shine">Nosotros logramos que lleguen primero a tu equipo legal.</span>
+              <span className="text-shine">antes de que los firme tu competencia.</span>
             </h1>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-              SmartData Legal ejecuta tu intake en inglés y español, y entrega leads clasificados y estructurados para que paralegales y abogados respondan antes de que baje la intención del cliente.
+              Tu bufete invierte en anuncios pero pierde 30–50% de los leads por respuesta lenta. SmartData Legal responde en menos de 60 segundos, en inglés y español, y entrega cada lead listo para que tu equipo firme más casos.
             </p>
           </ScrollReveal>
 
@@ -72,7 +72,7 @@ export function Hero() {
                 <MessageCircle className="h-4 w-4" /> WhatsApp directo
               </CtaButton>
             </div>
-            <p className="mt-4 text-sm text-muted">Casos reales. Sin compromiso. Solo para bufetes en PR.</p>
+            <p className="mt-4 text-sm text-muted">Demo gratis con tus tipos de caso. Sin compromiso. Solo bufetes en PR.</p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.52}>
